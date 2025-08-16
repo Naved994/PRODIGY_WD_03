@@ -83,36 +83,11 @@ function handleClick(index){
 }
 
 function aiMove() {
-    // Medium-hard AI: try to win, block, else random
+    // Simple AI: pick a random empty cell
     let emptyIndices = gameGrid.map((v, i) => v === "" ? i : null).filter(i => i !== null);
     if (emptyIndices.length === 0) return;
-
-    // 1. Try to win
-    for (let pos of winningPositions) {
-        let [a, b, c] = pos;
-        let line = [gameGrid[a], gameGrid[b], gameGrid[c]];
-        if (line.filter(v => v === 'o').length === 2 && line.includes("")) {
-            let move = pos[line.indexOf("")];
-            makeAIMove(move);
-            return;
-        }
-    }
-    // 2. Block player
-    for (let pos of winningPositions) {
-        let [a, b, c] = pos;
-        let line = [gameGrid[a], gameGrid[b], gameGrid[c]];
-        if (line.filter(v => v === 'x').length === 2 && line.includes("")) {
-            let move = pos[line.indexOf("")];
-            makeAIMove(move);
-            return;
-        }
-    }
-    // 3. Otherwise, random
+    // Optionally, improve AI with smarter logic
     let move = emptyIndices[Math.floor(Math.random() * emptyIndices.length)];
-    makeAIMove(move);
-}
-
-function makeAIMove(move) {
     boxes[move].innerText = 'O';
     boxes[move].style.pointerEvents = "none";
     gameGrid[move] = 'o';
