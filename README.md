@@ -24,9 +24,14 @@ No additional dependencies are required.
 
 ## Screenshots
 
-> Add your screenshots in the `images/` folder and reference them below:
 
-![Game Screenshot](images/screenshot.png)
+
+<img width="1868" height="949" alt="image" src="https://github.com/user-attachments/assets/7b33492c-ef0d-401c-8df8-bc4352fe9e6b" />
+
+<img width="1919" height="946" alt="image" src="https://github.com/user-attachments/assets/48edf8f3-cbf4-47b8-ada3-94f266a0b3cb" />
+
+<img width="1919" height="951" alt="image" src="https://github.com/user-attachments/assets/af85059c-485b-4959-83d8-00a0c131c926" />
+
 
 ## Project Structure
 ```
